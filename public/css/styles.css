@@ -197,7 +197,7 @@ img {
 }
 
 .site-header--home .container {
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .site-header--home nav {
@@ -205,7 +205,7 @@ img {
 }
 
 .site-header--home .nav-links {
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 0;
 }
 
@@ -216,7 +216,7 @@ img {
 .site-header--home .nav-links a {
   display: block;
   padding: 0 14px;
-  white-space: nowrap;
+  white-space: wrap;
 }
 
 .site-header--home .nav-links li:last-child {
@@ -755,8 +755,17 @@ img {
     font-size: 30px;
   }
 
+  .nav-links {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
   .section {
     padding: 64px 0;
+  }
+
+  .hero-inner {
+    flex-direction: column-reverse;
   }
 
   .feature-row {
@@ -778,6 +787,11 @@ img {
     gap: 40px;
   }
 
+  .playbook-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -786,6 +800,11 @@ img {
 @media (max-width: 480px) {
   h1 {
     font-size: 34px;
+  }
+
+  .hero-image {
+    width: 100vw;
+    margin: 0 auto;
   }
 
   .card-grid {
