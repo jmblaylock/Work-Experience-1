@@ -258,8 +258,10 @@ img {
 }
 
 .hero-media {
-  width: 600px;
-  flex-shrink: 0;
+  max-width: 600px;
+  width: 100%;
+  flex-shrink: 1;
+  align-self: flex-start;
 }
 
 .hero-image {
@@ -746,6 +748,16 @@ img {
   padding-top: 24px;
 }
 
+@media (max-width: 1024px) {
+  .hero-inner {
+    flex-direction: column-reverse
+  }
+
+  .playbook-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
@@ -757,15 +769,10 @@ img {
 
   .nav-links {
     flex-wrap: wrap;
-    flex-direction: column;
   }
 
   .section {
     padding: 64px 0;
-  }
-
-  .hero-inner {
-    flex-direction: column-reverse;
   }
 
   .feature-row {
