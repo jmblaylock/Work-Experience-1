@@ -197,7 +197,7 @@ img {
 }
 
 .site-header--home .container {
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .site-header--home nav {
@@ -205,7 +205,7 @@ img {
 }
 
 .site-header--home .nav-links {
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 0;
 }
 
@@ -216,7 +216,7 @@ img {
 .site-header--home .nav-links a {
   display: block;
   padding: 0 14px;
-  white-space: nowrap;
+  white-space: wrap;
 }
 
 .site-header--home .nav-links li:last-child {
@@ -258,8 +258,10 @@ img {
 }
 
 .hero-media {
-  width: 600px;
-  flex-shrink: 0;
+  max-width: 600px;
+  width: 100%;
+  flex-shrink: 1;
+  align-self: flex-start;
 }
 
 .hero-image {
@@ -746,6 +748,16 @@ img {
   padding-top: 24px;
 }
 
+@media (max-width: 1024px) {
+  .hero-inner {
+    flex-direction: column-reverse
+  }
+
+  .playbook-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+
 @media (max-width: 768px) {
   h1 {
     font-size: 40px;
@@ -753,6 +765,10 @@ img {
 
   h2 {
     font-size: 30px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
   }
 
   .section {
@@ -778,6 +794,11 @@ img {
     gap: 40px;
   }
 
+  .playbook-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -786,6 +807,11 @@ img {
 @media (max-width: 480px) {
   h1 {
     font-size: 34px;
+  }
+
+  .hero-image {
+    width: 100vw;
+    margin: 0 auto;
   }
 
   .card-grid {
